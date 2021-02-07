@@ -20,9 +20,12 @@ example2.style.padding = "15px";
 example2.style.border = "solid black 2px";
 example2.style.backgroundColor = "green";
 example2.style.margin = "10px";
+let size = 20;
+document.getElementById('h1').style.fontSize = size ;
 example2.addEventListener('click', function(){
-    header.style.fontSize = header++
+    document.getElementById("h1").style.fontSize = size++;
 })
+
 
 let example3 = document.querySelector('#example3');
 example3.style.padding = "15px";
@@ -38,9 +41,14 @@ example4.style.padding = "15px";
 example4.style.border = "solid black 2px";
 example4.style.backgroundColor = "green";
 example4.style.margin = "10px";
-example4.addEventListener('click', function(){
-    header.innerText = header++
-})
+example4.document.addEventListener('click', function(event) {
+
+    if (event.target.dataset.counter != undefined) {
+      event.target.value++;
+    }
+    
+    document.getElementById("h1").innerText = event;
+});
 
 let example5 = document.querySelector('#example5');
 example5.style.padding = "15px";
