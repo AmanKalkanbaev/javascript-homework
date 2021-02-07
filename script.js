@@ -30,10 +30,12 @@ for (let c = 0; c <= 100; c++) {
 four.innerHTML = sum;
 
 let five = document.getElementById('five')
-let result
-for (let number3 = 0; number3 <= 10; number3++) {
-    if (number3 / number3 || number3 / 1 == 0){
-        result = number3
+let result;
+let number3
+while (number3 <= 100){
+    if (number3 % 2 == 1){
+        result == number3;
     }
-}
+    number3++;
+}   
 five.innerHTML = result;
