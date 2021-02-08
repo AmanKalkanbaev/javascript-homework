@@ -1,3 +1,5 @@
+let h1 = document.querySelector("h1");
+h1.style.fontSize = '3em';
 
 
 let example1 = document.querySelector('#example1');
@@ -28,6 +30,11 @@ example3.style.padding = "15px";
 example3.style.border = "solid black 2px";
 example3.style.backgroundColor = "red";
 example3.style.margin = "10px";
+example3.addEventListener('click', function () {
+    let number = parseInt(h1.innerText);
+    number--;
+    h1.style.fontSize = number;
+})
 
 let example4 = document.querySelector('#example4');
 example4.style.padding = "15px";
@@ -52,9 +59,9 @@ example5.addEventListener('click', function () {
 })
 
 
-let input = document.getElementById("#text")
+let input = document.querySelector("input");
 input.addEventListener('change', function () {
-    document.getElementById("#h1").innerText = input.value;
+    h1.innerText = input.value;
 })
 
 //Alinur ver
