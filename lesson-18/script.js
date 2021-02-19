@@ -5,7 +5,10 @@ let button = document.querySelector('#button');
 let chat = document.querySelector('#chat');
 let delite = document.querySelector('#delite');
 
-button.addEventListener('click', function(){
+// setTimeout(function() {
+//     location.reload();
+//   }, 1000);
+button.addEventListener('mousedown', function(){
     let div = document.createElement("div");
     let span = document.createElement("span");
     let spanSec = document.createElement("span");
