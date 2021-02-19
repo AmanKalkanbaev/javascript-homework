@@ -3,14 +3,18 @@ let messege = document.querySelector('#messege');
 let color = document.querySelector('#color');
 let button = document.querySelector('#button');
 let chat = document.querySelector('#chat');
+let delite = document.querySelector('#delite');
 
 button.addEventListener('click', function(){
     let div = document.createElement("div");
     let span = document.createElement("span");
     let spanSec = document.createElement("span");
-    span.innerText = nameSelector.value + ": "
-    spanSec.innerText = messege.value
-    span.style.color = color.value
+    div.classList.toggle("messege");
+    span.classList.toggle("span");
+    spanSec.classList.toggle("spanSec");
+    span.innerText = nameSelector.value;
+    spanSec.innerText = messege.value;
+    span.style.color = color.value;
     chat.append(div);
     div.append(span);
     div.append(spanSec);
@@ -22,7 +26,7 @@ button.addEventListener('click', function(){
             color: color.value
         })
 
-    })
+    });
 
 });
 fetch('https://it-academy-ajax-table-14a18-default-rtdb.firebaseio.com/chat.json')
@@ -34,11 +38,23 @@ fetch('https://it-academy-ajax-table-14a18-default-rtdb.firebaseio.com/chat.json
             let div = document.createElement("div");
             let span = document.createElement("span");
             let spanSec = document.createElement("span");
-            span.innerText = data[key].name + ": "
-            spanSec.innerText = data[key].messege
-            span.style.color = data[key].color
+            div.classList.toggle("messege");
+            span.classList.toggle("span");
+            spanSec.classList.toggle("spanSec");
+            span.innerText = data[key].name;
+            spanSec.innerText = data[key].messege;
+            span.style.color = data[key].color;
             chat.append(div);
             div.append(span);
             div.append(spanSec);
         }
+})
+
+delite.addEventListener('mousedown', function() {
+    fetch(`https://it-academy-ajax-table-14a18-default-rtdb.firebaseio.com/chat.json`, {
+        method: "DELETE"
     })
+        .then(function (response) {
+            div.remove();
+        })
+});
